@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+:root {
+    --clr-white: #ffffff;
+    --clr-text: #121212;
+    --clr-accent: rgb(4, 112, 112);
+    --clr-bg: lightblue;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--clr-text);
+    background-color: var(--clr-bg);
+    font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--clr-white);
+
+}
+
+header {
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.header-wrapper {
+    display: flex;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-accent);
+    left: 0;
+    top: 0;
+    transform-origin: bottom left;
+    transform: rotateZ(-15deg) scaleX(1.5);
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.header-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    aspect-ratio: 1/1;
+    background: url(images/header-image.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0.5rem;
+    flex: 3;
+    float: left;
+    min-width: 300px;
+    color: var(--clr-white);
+}
+
+.header-image h1{
+    font-size: 1.75rem;
+}
+
+.header-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+    padding: 2rem 1rem 1rem;
+    background-color: var(--clr-white);
+    flex: 4;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+.header-about .links {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.25rem;
+    color: black;
+    align-self: flex-end;
+}
+
+main {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    padding-inline: 3rem;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 5 / 6;
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    background-color: var(--clr-accent);
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+
+}
+
+.card-description {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-description p {
+    font-size: 0.8rem;
+}
+
+.project-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    padding: 2rem 3rem;
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    gap: 1rem;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacts p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.communicate img{
+    filter: invert(100%);
+}
+
+.contacts-image {
+    min-width: 180px;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: url(images/footer-image.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contacts .links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 20px;
+}
+
+@media (max-width: 700px) {
+    .header-about .links {
+        display: none;
+    }
+    .header-image {
+        min-width: 200px;
+    }
+    header, main, footer {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-wrapper {
+        flex-direction: column;
+    }
+    .header-about {
+        margin: 0;
+        background: none;
+        box-shadow: none;
+    }
+    .header-about .links,
+    footer .links {
+        display: flex;
+        align-self: center;
+    }
+    footer{
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    h2 {
+        text-align: center;
+    }
+    .header-image {
+        position: relative;
+    }
+    header::before {
+        background: none;
+        box-shadow: none;
+    }
+    .header-image::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--clr-accent);
+        left: 0;
+        top: 0;
+        transform-origin: bottom left;
+        transform: rotateZ(-15deg) scaleX(1.5) translateX(-2rem) translateY(-1rem); 
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+        z-index: -1;
+    }
+}
