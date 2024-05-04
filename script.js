@@ -17,7 +17,7 @@ projects.push
         'Battleship',
         'https://github.com/Dimar1510/battleship',
         'https://dimar1510.github.io/battleship/',
-        'Final project of vanilla JS course. Will add more later.',
+        'Final project of vanilla JS course. I even added somewhat smart computer opponent.',
         'images/projects/battleship.JPG'
     ),
     new Project

@@ -16,6 +16,7 @@
 
 a {
     text-decoration: none;
+    transition: scale 0.3s ease;
 }
 
 body {
@@ -120,8 +121,11 @@ main {
     aspect-ratio: 5 / 6;
     display: grid;
     grid-template-rows: 3fr 2fr;
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);
     transition: scale ease 0.3s;
+    background-color: var(--clr-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .card a:hover {
@@ -166,6 +170,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
+    font-size: 1.5rem;
 }
 
 footer {
@@ -262,5 +267,12 @@ footer {
         transform: rotateZ(-15deg) scaleX(1.5) translateX(-2rem) translateY(-1rem); 
         box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
         z-index: -1;
+    }
+    .card:hover {
+        scale: 1;
+    }
+    .project-links {
+        gap: 1rem;
+        font-size: 2rem;
     }
 }
