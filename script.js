@@ -14,6 +14,14 @@ projects.push
 (
     new Project
     (
+        'Sliding puzzle',
+        'https://github.com/Dimar1510/sliding-puzzle',
+        'https://dimar1510.github.io/sliding-puzzle/',
+        'Out of curriculum scope, this project dives in some interesting   ways you can animate a grid.',
+        'images/projects/puzzle.JPG'
+    ),
+    new Project
+    (
         'Battleship',
         'https://github.com/Dimar1510/battleship',
         'https://dimar1510.github.io/battleship/',
